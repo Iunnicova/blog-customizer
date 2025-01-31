@@ -14,18 +14,24 @@ export const Article = () => {
 				Портрет Западной Швейцарии
 			</Text>
 			<div className={styles.titleDescription}>
-				<Text size={22} weight={800} uppercase align='center' dynamicLite>
+				<Text
+					as='h3'
+					size={22}
+					weight={800}
+					uppercase
+					align='center'
+					dynamicLite>
 					Примитивист Фиштр расписывает новый бюджетный авиалайнер
 				</Text>
 			</div>
 			<img className={styles.image} src={plane} alt='Картинка самолета' />
-			<Text dynamic size={18} fontStyle='italic'>
+			<Text as='figcaption' dynamic size={18} fontStyle='italic'>
 				Фото: Hans-Peter Gauster , &quot;Bombardier CSeries CS300 HB-JCA&quot; ©
 				2017 CC BY-SA 2.0
 			</Text>
 			{article.map((paragraph: IParagraph) => {
 				return (
-					<Text key={paragraph.id} dynamic size={18}>
+					<Text as='p' key={paragraph.id} dynamic size={18}>
 						{paragraph.text}
 					</Text>
 				);
