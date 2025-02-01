@@ -1,5 +1,4 @@
 import { CSSProperties, useState } from 'react';
-import clsx from 'clsx';
 import { ArticleParamsForm } from 'src/components/article-params-form';
 import { Sidebar } from 'src/components/sidebar';
 import {
@@ -15,7 +14,7 @@ const App = () => {
 
 	return (
 		<main
-			className={clsx(styles.main)}
+			className={styles.main}
 			style={
 				{
 					'--font-family': articleState.fontFamilyOption.value,
