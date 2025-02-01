@@ -5,7 +5,7 @@ import {
 	ArticleStateType,
 	defaultArticleState,
 } from 'src/constants/articleProps';
-import { Article } from 'src/page/article';
+import { Article } from 'src/components/article';
 import styles from './App.module.scss';
 
 const App = () => {

@@ -16,7 +16,7 @@ export const Sidebar = ({ children }: ISidebarProps) => {
 		onClose: () => setIsOpen(false),
 	});
 	return (
-		<>
+		<div ref={sidebarRef}>
 			<ArrowButton
 				isOpen={isOpen}
 				onClick={() => {
@@ -24,10 +24,9 @@ export const Sidebar = ({ children }: ISidebarProps) => {
 				}}
 			/>
 			<aside
-				ref={sidebarRef}
 				className={clsx(styles.sidebar, { [styles.sidebar_open]: isOpen })}>
 				{children}
 			</aside>
-		</>
+		</div>
 	);
 };
