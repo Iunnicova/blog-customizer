@@ -32,7 +32,7 @@ export const ArticleParamsForm = ({
 		fontColor: fontColorOption,
 		backgroundColor: backgroundColorOption,
 		contentWidth: contentWidthOption,
-	} = { ...articleState };
+	} = articleState;
 
 	const [fontFamily, setFontFamily] = useState<OptionType>(fontFamilyOption);
 	const [fontSize, setFontsize] = useState<OptionType>(fontSizeOption);
@@ -55,7 +55,7 @@ export const ArticleParamsForm = ({
 		});
 	};
 
-	const handleReturnDefaultSettings = () => {
+	const handleReset = () => {
 		setArticleState(defaultArticleState),
 			setFontFamily(defaultArticleState.fontFamilyOption),
 			setFontsize(defaultArticleState.fontSizeOption),
@@ -65,10 +65,7 @@ export const ArticleParamsForm = ({
 	};
 
 	return (
-		<form
-			className={styles.form}
-			onSubmit={handleSubmit}
-			onReset={handleReturnDefaultSettings}>
+		<form className={styles.form} onSubmit={handleSubmit} onReset={handleReset}>
 			<Text as='h2' size={31} weight={800} uppercase>
 				Задайте параметры
 			</Text>
@@ -77,21 +74,21 @@ export const ArticleParamsForm = ({
 				selected={fontFamily}
 				title='шрифт'
 				placeholder='Выберите шрифт'
-				onChange={(option) => setFontFamily(option)}
+				onChange={setFontFamily}
 			/>
 			<RadioGroup
 				options={fontSizeOptions}
 				selected={fontSize}
 				name='fontSize'
 				title='размер шрифта'
-				onChange={(option) => setFontsize(option)}
+				onChange={setFontsize}
 			/>
 			<Select
 				options={fontColors}
 				selected={fontColor}
 				title='Цвет шрифта'
 				placeholder='Выберите цвет шрифта'
-				onChange={(option) => setFontColor(option)}
+				onChange={setFontColor}
 			/>
 			<Separator />
 			<Select
@@ -99,14 +96,14 @@ export const ArticleParamsForm = ({
 				selected={backgroundColor}
 				title='Цвет фона'
 				placeholder='Выберите цвет фона'
-				onChange={(option) => setBackgroundColor(option)}
+				onChange={setBackgroundColor}
 			/>
 			<Select
 				options={contentWidthArr}
 				selected={contentWidth}
 				title='Ширина контента'
 				placeholder='Выберите ширину контента'
-				onChange={(option) => setContentWidth(option)}
+				onChange={setContentWidth}
 			/>
 			<div className={styles.bottomContainer}>
 				<Button title='Сбросить' htmlType='reset' type='clear' />
