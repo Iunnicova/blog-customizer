@@ -43,8 +43,8 @@ export const ArticleParamsForm = ({
 	const [contentWidth, setContentWidth] =
 		useState<OptionType>(contentWidthOption);
 
-	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-		e.preventDefault();
+	const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
+		evt.preventDefault();
 		setArticleState({
 			...articleState,
 			fontFamilyOption: fontFamily,
